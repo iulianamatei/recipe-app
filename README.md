@@ -5,7 +5,7 @@
 ## Introducere
 RecipeLab este o aplicație web care permite utilizatorilor să caute rețete după ingrediente și să vizualizeze informații nutriționale, accesând date din două servicii cloud prin API REST.
 
-**Link aplicație:** https://LINKUL-TAU.netlify.app  
+**Link aplicație:** https://recipe-app-mi.netlify.app/  
 **Video demo:** https://youtube.com/LINKUL-TAU
 
 ---
