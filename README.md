@@ -3,7 +3,7 @@
 **Autor:** Matei Iuliana — Grupa 1146
 
 **Link aplicație:** https://recipe-app-mi.netlify.app
-**Video demo:** 
+**Video demo:** https://youtu.be/3RAvpN1ywz8
 
 ---
 
@@ -171,7 +171,7 @@ Datele utilizatorului sunt salvate în **localStorage** al browserului, asigurâ
 
 ---
 
-## 7. Referințe
+## 6. Referințe
 
 - TheMealDB API: https://www.themealdb.com/api.php
 - Open Food Facts API: https://world.openfoodfacts.org/data
