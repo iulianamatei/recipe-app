@@ -3,7 +3,7 @@
 **Autor:** Matei Iuliana — Grupa 1146
 
 **Link aplicație:** https://recipe-app-mi.netlify.app
-**Video demo:** https://youtube.com/LINKUL-TAU
+**Video demo:** 
 
 ---
 
