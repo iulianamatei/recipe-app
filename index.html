@@ -14,46 +14,33 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; }
 
-  header { background: var(--accent); padding: 1.8rem 2rem 1.5rem; }
+  header { background: var(--accent); padding: 1.8rem 2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
   header h1 { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: #fff; }
   header p { font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-top: 4px; }
+  .header-btns { display: flex; gap: 8px; }
+  .header-btn { background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.3); color: #fff; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; padding: 7px 14px; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .header-btn:hover { background: rgba(255,255,255,0.25); }
 
-  .banner { background: var(--accent2); color: #fff; padding: 2rem; display: flex; gap: 1.5rem; align-items: center; border-bottom: 3px solid var(--accent); }
-  .banner img { width: 120px; height: 120px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
-  .banner-body { flex: 1; }
+  .banner { background: var(--accent2); color: #fff; padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-bottom: 3px solid var(--accent); }
+  .banner img { width: 160px; height: 160px; object-fit: cover; border-radius: 14px; margin-bottom: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
   .banner-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.75; margin-bottom: 6px; }
-  .banner-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; }
-  .banner-meta { font-size: 0.82rem; opacity: 0.8; margin-bottom: 12px; }
-  .banner-btn { background: #fff; color: var(--accent2); border: none; border-radius: 8px; padding: 7px 16px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; }
+  .banner-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 8px; }
+  .banner-meta { font-size: 0.82rem; opacity: 0.8; margin-bottom: 14px; }
+  .banner-btn { background: #fff; color: var(--accent2); border: none; border-radius: 8px; padding: 8px 20px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; }
   .banner-btn:hover { opacity: 0.85; }
 
   .wrap { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
-
   .search-row { display: flex; gap: 10px; margin-bottom: 1rem; }
-  input[type=text] {
-    flex: 1; background: var(--surface); border: 1.5px solid var(--border);
-    border-radius: var(--r); color: var(--text); font-family: 'DM Sans', sans-serif;
-    font-size: 1rem; padding: 0.8rem 1.1rem; outline: none; transition: border-color 0.2s;
-  }
+  input[type=text] { flex: 1; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 1rem; padding: 0.8rem 1.1rem; outline: none; transition: border-color 0.2s; }
   input[type=text]:focus { border-color: var(--accent); }
   input[type=text]::placeholder { color: var(--muted); }
-
-  button.primary {
-    background: var(--accent); color: #fff; border: none; border-radius: var(--r);
-    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500;
-    padding: 0.8rem 1.5rem; cursor: pointer; transition: background 0.2s;
-  }
+  button.primary { background: var(--accent); color: #fff; border: none; border-radius: var(--r); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500; padding: 0.8rem 1.5rem; cursor: pointer; transition: background 0.2s; }
   button.primary:hover { background: var(--accent2); }
   button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
 
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
   .chip { background: var(--surface); border: 1.5px solid var(--border); border-radius: 999px; font-size: 0.8rem; color: var(--accent); padding: 5px 14px; cursor: pointer; transition: all 0.15s; }
   .chip:hover { background: var(--accent-light); border-color: var(--accent); }
-
-  .filter-row { display: flex; align-items: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
-  .filter-row label { font-size: 0.82rem; color: var(--muted); }
-  select { background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; padding: 6px 12px; outline: none; cursor: pointer; }
-  select:focus { border-color: var(--accent); }
 
   .tabs { display: flex; gap: 6px; margin-bottom: 1.5rem; flex-wrap: wrap; }
   .tab { background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; padding: 7px 16px; cursor: pointer; transition: all 0.15s; }
@@ -66,13 +53,13 @@
   .badge-blue  { background: #d4e8f7; color: #1a5a8a; }
 
   .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-bottom: 2.5rem; }
-  .card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; cursor: pointer; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; position: relative; }
+  .card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; cursor: pointer; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; }
   .card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 6px 20px rgba(14,158,142,0.12); }
   .card img { width: 100%; height: 150px; object-fit: cover; display: block; }
   .card-body { padding: 0.85rem; }
   .card-body h3 { font-size: 0.9rem; font-weight: 500; line-height: 1.3; margin-bottom: 6px; color: var(--text); }
-  .card-actions { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
-  .card-actions button { flex: 1; border: 1.5px solid var(--border); border-radius: 7px; background: var(--surface2); font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--muted); padding: 5px 6px; cursor: pointer; transition: all 0.15s; min-width: 50px; }
+  .card-actions { display: flex; gap: 6px; margin-top: 8px; }
+  .card-actions button { flex: 1; border: 1.5px solid var(--border); border-radius: 7px; background: var(--surface2); font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--muted); padding: 5px 6px; cursor: pointer; transition: all 0.15s; }
   .card-actions button:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
   .card-actions button.fav-active { background: #fdecea; border-color: #e05555; color: #e05555; }
 
@@ -82,14 +69,13 @@
   .nutr-item .val { font-size: 1.3rem; font-weight: 500; color: var(--accent); }
   .nutr-item .lbl { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
 
-  /* ── PLANNER ── */
   .planner-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 2rem; }
   .day-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r); padding: 1rem; min-height: 140px; }
   .day-card h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 10px; }
   .day-meal { display: flex; align-items: center; gap: 8px; background: var(--surface2); border-radius: 8px; padding: 6px 8px; margin-bottom: 6px; border: 1px solid var(--border); }
   .day-meal img { width: 36px; height: 36px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
   .day-meal-name { font-size: 0.78rem; flex: 1; line-height: 1.3; color: var(--text); }
-  .day-meal-remove { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1rem; padding: 0 2px; flex-shrink: 0; }
+  .day-meal-remove { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1rem; padding: 0 2px; }
   .day-meal-remove:hover { color: #e05555; }
   .day-empty { font-size: 0.78rem; color: var(--muted); text-align: center; padding: 1rem 0; }
   .clear-planner-btn { background: none; border: 1.5px solid #f5c5c0; border-radius: 8px; color: #e05555; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; padding: 6px 14px; cursor: pointer; margin-bottom: 1.5rem; }
@@ -103,7 +89,7 @@
   .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; border-radius: 999px; padding: 10px 24px; font-size: 0.85rem; font-weight: 500; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 999; }
   .toast.show { opacity: 1; }
 
-  /* ── MODAL ── */
+  /* ── MODAL generic ── */
   .modal-bg { display: none; position: fixed; inset: 0; background: rgba(10,40,38,0.55); z-index: 100; align-items: center; justify-content: center; padding: 1rem; }
   .modal-bg.open { display: flex; }
   .modal { background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px; max-width: 580px; width: 100%; max-height: 88vh; overflow-y: auto; padding: 1.5rem; }
@@ -117,8 +103,6 @@
   .modal-actions { display: flex; gap: 8px; margin-bottom: 1rem; flex-wrap: wrap; }
   .modal-actions button { border: 1.5px solid var(--border); border-radius: 8px; background: var(--surface2); font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); padding: 7px 14px; cursor: pointer; transition: all 0.15s; }
   .modal-actions button:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
-  .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; margin: 0.5rem 0 1rem; border-radius: 10px; overflow: hidden; }
-  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
   .day-select-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; background: var(--surface2); border-radius: 10px; padding: 10px; border: 1px solid var(--border); margin-bottom: 1rem; }
   .day-select-row label { font-size: 0.82rem; color: var(--muted); }
   .day-select-row select { font-size: 0.82rem; padding: 5px 10px; }
@@ -126,51 +110,84 @@
   .day-select-row button:hover { background: var(--accent2); }
   .close-btn { float: right; background: var(--accent-light); border: 1px solid var(--border); color: var(--accent2); border-radius: 8px; padding: 4px 12px; cursor: pointer; font-size: 0.85rem; margin-bottom: 0.5rem; }
   .close-btn:hover { background: var(--border); }
+
+  /* ── CALORIE CALCULATOR ── */
+  .calc-modal { max-width: 520px; }
+  .calc-search-row { display: flex; gap: 8px; margin-bottom: 1rem; }
+  .calc-search-row input { flex: 1; background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; padding: 7px 12px; outline: none; }
+  .calc-search-row input:focus { border-color: var(--accent); }
+  .calc-search-row button { background: var(--accent); color: #fff; border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; padding: 7px 14px; cursor: pointer; }
+  .calc-search-row button:hover { background: var(--accent2); }
+  .calc-result-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; margin-bottom: 1rem; display: none; }
+  .calc-result-box.visible { display: block; }
+  .calc-result-name { font-size: 0.88rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+  .calc-result-kcal { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .calc-grams-row { display: flex; gap: 8px; align-items: center; }
+  .calc-grams-row input { width: 80px; background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; padding: 6px 10px; outline: none; }
+  .calc-grams-row input:focus { border-color: var(--accent); }
+  .calc-grams-row span { font-size: 0.82rem; color: var(--muted); }
+  .calc-add-btn { background: var(--accent); color: #fff; border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; padding: 6px 14px; cursor: pointer; margin-left: auto; }
+  .calc-add-btn:hover { background: var(--accent2); }
+  .calc-list { margin-bottom: 1rem; }
+  .calc-item { display: flex; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+  .calc-item-name { flex: 1; color: var(--text); }
+  .calc-item-kcal { color: var(--accent); font-weight: 500; min-width: 60px; text-align: right; }
+  .calc-item-remove { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1rem; padding: 0 4px; }
+  .calc-item-remove:hover { color: #e05555; }
+  .calc-total-box { background: var(--accent); color: #fff; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+  .calc-total-box .lbl { font-size: 0.82rem; opacity: 0.85; }
+  .calc-total-box .val { font-size: 1.5rem; font-weight: 500; }
+  .calc-empty { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.85rem; }
+  .calc-save-row { display: flex; gap: 8px; }
+  .calc-save-row input { flex: 1; background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; padding: 7px 12px; outline: none; }
+  .calc-save-row input:focus { border-color: var(--accent); }
+  .calc-save-row button { background: var(--accent2); color: #fff; border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; padding: 7px 16px; cursor: pointer; white-space: nowrap; }
+  .calc-save-row button:hover { opacity: 0.85; }
+
+  /* ── NOTES / SAVED CALCULATIONS ── */
+  .notes-modal { max-width: 500px; }
+  .note-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
+  .note-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .note-card-name { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+  .note-card-total { font-size: 0.9rem; font-weight: 500; color: var(--accent); }
+  .note-card-remove { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1rem; }
+  .note-card-remove:hover { color: #e05555; }
+  .note-card-date { font-size: 0.72rem; color: var(--muted); margin-bottom: 6px; }
+  .note-ing-list { font-size: 0.8rem; color: #555; line-height: 1.7; }
+  .notes-empty { text-align: center; padding: 2.5rem 1rem; color: var(--muted); font-size: 0.9rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>RecipeLab</h1>
-  <p>Search recipes & get nutrition info — powered by TheMealDB & Open Food Facts</p>
+  <div>
+    <h1>RecipeLab</h1>
+    <p>Search recipes & get nutrition info — powered by TheMealDB & Open Food Facts</p>
+  </div>
+  <div class="header-btns">
+    <button class="header-btn" onclick="openCalc()">🔢 Calorie Calculator</button>
+    <button class="header-btn" onclick="openNotes()">📋 Saved Calculations</button>
+  </div>
 </header>
 
 <div id="banner"></div>
 
 <div class="wrap">
   <div class="search-row">
-    <input type="text" id="query" placeholder="Type an ingredient (e.g. chicken, pasta, salmon)..."/>
+    <input type="text" id="query" placeholder="Type an ingredient (e.g. chicken, beef, salmon)..."/>
     <button class="primary" id="searchBtn" onclick="doSearch()">Search</button>
   </div>
-
   <div class="chips">
     <span class="chip" onclick="quickSearch('chicken')">🍗 Chicken</span>
-    <span class="chip" onclick="quickSearch('pasta')">🍝 Pasta</span>
     <span class="chip" onclick="quickSearch('salmon')">🐟 Salmon</span>
     <span class="chip" onclick="quickSearch('beef')">🥩 Beef</span>
-    <span class="chip" onclick="quickSearch('vegetable')">🥦 Vegetable</span>
     <span class="chip" onclick="quickSearch('egg')">🥚 Egg</span>
   </div>
-
-  <div class="filter-row">
-    <label>Filter by category:</label>
-    <select id="categoryFilter" onchange="applyFilter()">
-      <option value="all">All categories</option>
-      <option value="Beef">Beef</option>
-      <option value="Chicken">Chicken</option>
-      <option value="Seafood">Seafood</option>
-      <option value="Vegetarian">Vegetarian</option>
-      <option value="Pasta">Pasta</option>
-      <option value="Dessert">Dessert</option>
-    </select>
-  </div>
-
   <div class="tabs">
     <button class="tab active" onclick="switchTab('results')">🔍 Results</button>
     <button class="tab" onclick="switchTab('favourites')">❤️ Favourites (<span id="favCount">0</span>)</button>
     <button class="tab" onclick="switchTab('planner')">📅 Meal Planner</button>
   </div>
-
   <div id="output">
     <div class="status">
       <div style="font-size:2.5rem; margin-bottom:0.5rem">🍽️</div>
@@ -183,8 +200,51 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- Recipe Modal -->
 <div class="modal-bg" id="modalBg" onclick="closeModal(event)">
   <div class="modal" id="modalContent"></div>
+</div>
+
+<!-- Calorie Calculator Modal -->
+<div class="modal-bg" id="calcBg" onclick="closeCalcModal(event)">
+  <div class="modal calc-modal">
+    <button class="close-btn" onclick="document.getElementById('calcBg').classList.remove('open')">✕ Close</button>
+    <h2>🔢 Calorie Calculator</h2>
+    <p style="font-size:0.82rem; color:var(--muted); margin: 0.5rem 0 1rem;">Search an ingredient, set grams, add to your list.</p>
+    <div class="calc-search-row">
+      <input type="text" id="calcQuery" placeholder="Search ingredient (e.g. chicken, rice...)"/>
+      <button onclick="searchCalcIngredient()">Search</button>
+    </div>
+    <div class="calc-result-box" id="calcResultBox">
+      <div class="calc-result-name" id="calcResultName"></div>
+      <div class="calc-result-kcal" id="calcResultKcal"></div>
+      <div class="calc-grams-row">
+        <input type="number" id="calcGrams" value="100" min="1"/>
+        <span>grams</span>
+        <button class="calc-add-btn" onclick="addCalcIngredient()">+ Add</button>
+      </div>
+    </div>
+    <div class="calc-list" id="calcList">
+      <div class="calc-empty">No ingredients added yet.</div>
+    </div>
+    <div class="calc-total-box">
+      <div><div class="lbl">Total Calories</div><div class="val" id="calcTotal">0 kcal</div></div>
+    </div>
+    <div class="calc-save-row">
+      <input type="text" id="calcRecipeName" placeholder="Name this recipe (e.g. My Chicken Bowl)..."/>
+      <button onclick="saveCalculation()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Saved Calculations / Notes Modal -->
+<div class="modal-bg" id="notesBg" onclick="closeNotesModal(event)">
+  <div class="modal notes-modal">
+    <button class="close-btn" onclick="document.getElementById('notesBg').classList.remove('open')">✕ Close</button>
+    <h2>📋 Saved Calculations</h2>
+    <p style="font-size:0.82rem; color:var(--muted); margin: 0.5rem 0 1.2rem;">Your saved calorie calculations.</p>
+    <div id="notesList"></div>
+  </div>
 </div>
 
 <script>
@@ -192,12 +252,16 @@
   let currentMeal = null;
   let favourites = JSON.parse(localStorage.getItem('recipelab-favs') || '[]');
   let planner = JSON.parse(localStorage.getItem('recipelab-planner') || '{}');
+  let savedCalcs = JSON.parse(localStorage.getItem('recipelab-calcs') || '[]');
   let currentTab = 'results';
+  let calcIngredients = [];
+  let currentCalcIngredient = null;
   const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   updateFavCount();
   loadBanner();
 
+  // ── BANNER ──
   async function loadBanner() {
     try {
       const res = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
@@ -206,16 +270,15 @@
       document.getElementById('banner').innerHTML = `
         <div class="banner">
           <img src="${m.strMealThumb}" alt="${m.strMeal}"/>
-          <div class="banner-body">
-            <div class="banner-label">✨ Recipe of the day</div>
-            <div class="banner-title">${m.strMeal}</div>
-            <div class="banner-meta">${m.strCategory} · ${m.strArea}</div>
-            <button class="banner-btn" onclick="openMeal('${m.idMeal}')">View Recipe</button>
-          </div>
+          <div class="banner-label">✨ Recipe of the day</div>
+          <div class="banner-title">${m.strMeal}</div>
+          <div class="banner-meta">${m.strCategory} · ${m.strArea}</div>
+          <button class="banner-btn" onclick="openMeal('${m.idMeal}')">View Recipe</button>
         </div>`;
     } catch(e) {}
   }
 
+  // ── SEARCH ──
   function quickSearch(term) {
     document.getElementById('query').value = term;
     doSearch();
@@ -228,7 +291,6 @@
     btn.disabled = true; btn.textContent = 'Searching...';
     switchTab('results');
     document.getElementById('output').innerHTML = '<div class="loading">Fetching data...</div>';
-    document.getElementById('categoryFilter').value = 'all';
     try {
       const [mealsData, nutritionData] = await Promise.all([fetchMeals(q), fetchNutrition(q)]);
       allMeals = mealsData;
@@ -251,31 +313,13 @@
     return data.products && data.products.length > 0 ? data.products[0] : null;
   }
 
-  async function applyFilter() {
-    const cat = document.getElementById('categoryFilter').value;
-    if (cat === 'all') { renderCards(allMeals); return; }
-    const grid = document.getElementById('recipeGrid');
-    if (!grid) return;
-    grid.innerHTML = '<div style="color:var(--muted); font-size:0.9rem; padding:1rem 0">Filtering...</div>';
-    try {
-      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${encodeURIComponent(cat)}`);
-      const data = await res.json();
-      const catMeals = data.meals || [];
-      const filtered = allMeals.filter(m => catMeals.some(cm => cm.idMeal === m.idMeal));
-      filtered.length === 0
-        ? grid.innerHTML = `<div style="color:var(--muted); font-size:0.9rem; padding:1rem 0">No recipes match "${cat}" in these results.</div>`
-        : renderCards(filtered);
-    } catch(e) {
-      grid.innerHTML = '<div style="color:#a33; font-size:0.9rem;">Error filtering.</div>';
-    }
-  }
-
+  // ── RENDER ──
   function renderResults(q, meals, nutrition) {
     let html = '';
     if (nutrition && nutrition.nutriments) {
       const n = nutrition.nutriments;
-      const name   = nutrition.product_name || q;
-      const kcal   = Math.round(n['energy-kcal_100g'] || n['energy-kcal'] || 0);
+      const name    = nutrition.product_name || q;
+      const kcal    = Math.round(n['energy-kcal_100g'] || n['energy-kcal'] || 0);
       const protein = (n['proteins_100g'] || 0).toFixed(1);
       const fat     = (n['fat_100g'] || 0).toFixed(1);
       const carbs   = (n['carbohydrates_100g'] || 0).toFixed(1);
@@ -308,9 +352,6 @@
   function renderCards(meals) {
     const grid = document.getElementById('recipeGrid');
     if (!grid) return;
-    if (meals.length === 0) {
-      grid.innerHTML = '<div style="color:var(--muted); font-size:0.9rem; padding:1rem 0">No recipes match this filter.</div>'; return;
-    }
     grid.innerHTML = meals.slice(0, 16).map(m => {
       const isFav = favourites.some(f => f.idMeal === m.idMeal);
       return `
@@ -329,6 +370,7 @@
     }).join('');
   }
 
+  // ── FAVOURITES ──
   function toggleFav(id, name, thumb, btn) {
     const exists = favourites.findIndex(f => f.idMeal === id);
     if (exists >= 0) {
@@ -354,15 +396,16 @@
     document.getElementById('favCount').textContent = favourites.length;
   }
 
+  // ── TABS ──
   function switchTab(tab) {
     currentTab = tab;
     document.querySelectorAll('.tab').forEach((t, i) => {
       t.classList.toggle('active',
         (i===0 && tab==='results') || (i===1 && tab==='favourites') || (i===2 && tab==='planner'));
     });
-    document.getElementById('output').style.display       = tab === 'results'    ? 'block' : 'none';
-    document.getElementById('favOutput').style.display    = tab === 'favourites' ? 'block' : 'none';
-    document.getElementById('plannerOutput').style.display = tab === 'planner'   ? 'block' : 'none';
+    document.getElementById('output').style.display        = tab === 'results'    ? 'block' : 'none';
+    document.getElementById('favOutput').style.display     = tab === 'favourites' ? 'block' : 'none';
+    document.getElementById('plannerOutput').style.display = tab === 'planner'    ? 'block' : 'none';
     if (tab === 'favourites') renderFavourites();
     if (tab === 'planner') renderPlanner();
   }
@@ -389,6 +432,7 @@
       </div>`;
   }
 
+  // ── PLANNER ──
   function renderPlanner() {
     const el = document.getElementById('plannerOutput');
     const hasAny = DAYS.some(d => planner[d] && planner[d].length > 0);
@@ -404,7 +448,7 @@
                   <div class="day-meal">
                     <img src="${m.strMealThumb}/preview" alt="${m.strMeal}"/>
                     <span class="day-meal-name">${m.strMeal}</span>
-                    <button class="day-meal-remove" onclick="removeMealFromDay('${day}',${i})" title="Remove">×</button>
+                    <button class="day-meal-remove" onclick="removeMealFromDay('${day}',${i})">×</button>
                   </div>`).join('')
               : '<div class="day-empty">No meals yet</div>'}
           </div>`).join('')}
@@ -414,9 +458,7 @@
   function addMealToDay(day) {
     if (!currentMeal) return;
     if (!planner[day]) planner[day] = [];
-    if (planner[day].some(m => m.idMeal === currentMeal.idMeal)) {
-      showToast('Already added to ' + day); return;
-    }
+    if (planner[day].some(m => m.idMeal === currentMeal.idMeal)) { showToast('Already added to ' + day); return; }
     planner[day].push({ idMeal: currentMeal.idMeal, strMeal: currentMeal.strMeal, strMealThumb: currentMeal.strMealThumb });
     localStorage.setItem('recipelab-planner', JSON.stringify(planner));
     showToast(`Added to ${day}!`);
@@ -435,114 +477,48 @@
     showToast('Planner cleared');
   }
 
+  // ── RECIPE MODAL ──
   async function openMeal(id) {
-  document.getElementById('modalContent').innerHTML =
-    '<div style="text-align:center; padding:2rem; color:var(--muted)">Loading...</div>';
-
-  document.getElementById('modalBg').classList.add('open');
-
-  const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
-  const data = await res.json();
-  const m = data.meals[0];
-
-  currentMeal = {
-    idMeal: m.idMeal,
-    strMeal: m.strMeal,
-    strMealThumb: m.strMealThumb
-  };
-
-  const ingredients = [];
-
-  for (let i = 1; i <= 20; i++) {
-    const ing = m[`strIngredient${i}`];
-    const meas = m[`strMeasure${i}`];
-
-    if (ing && ing.trim()) {
-      ingredients.push(
-        `${meas ? meas.trim() + ' ' : ''}${ing.trim()}`
-      );
+    document.getElementById('modalContent').innerHTML = '<div style="text-align:center; padding:2rem; color:var(--muted)">Loading...</div>';
+    document.getElementById('modalBg').classList.add('open');
+    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    const data = await res.json();
+    const m = data.meals[0];
+    currentMeal = { idMeal: m.idMeal, strMeal: m.strMeal, strMealThumb: m.strMealThumb };
+    const ingredients = [];
+    for (let i = 1; i <= 20; i++) {
+      const ing = m[`strIngredient${i}`];
+      const meas = m[`strMeasure${i}`];
+      if (ing && ing.trim()) ingredients.push(`${meas ? meas.trim() + ' ' : ''}${ing.trim()}`);
     }
+    const isFav = favourites.some(f => f.idMeal === m.idMeal);
+    document.getElementById('modalContent').innerHTML = `
+      <button class="close-btn" onclick="document.getElementById('modalBg').classList.remove('open')">✕ Close</button>
+      <h2>${m.strMeal}</h2>
+      <div class="meta">${m.strCategory || ''} ${m.strArea ? '· ' + m.strArea : ''}</div>
+      <div class="modal-actions">
+        <button onclick="toggleFavFromModal('${m.idMeal}','${m.strMeal.replace(/'/g,"\\'")}','${m.strMealThumb}',this)">${isFav ? '❤️ Saved' : '🤍 Save'}</button>
+        <button onclick="shareRecipe('${m.idMeal}','${m.strMeal.replace(/'/g,"\\'")}')">🔗 Share</button>
+      </div>
+      <div class="day-select-row">
+        <label>📅 Add to planner:</label>
+        <select id="daySelect">${DAYS.map(d => `<option value="${d}">${d}</option>`).join('')}</select>
+        <button onclick="addMealToDay(document.getElementById('daySelect').value)">Add</button>
+      </div>
+      <img class="meal-img" src="${m.strMealThumb}" alt="${m.strMeal}"/>
+      <h3>Ingredients</h3>
+      <ul>${ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+      <h3>Instructions</h3>
+      <p>${m.strInstructions ? m.strInstructions.slice(0, 700) + '...' : 'No instructions available.'}</p>`;
   }
 
-  const isFav = favourites.some(f => f.idMeal === m.idMeal);
-
-  document.getElementById('modalContent').innerHTML = `
-    <button class="close-btn"
-      onclick="document.getElementById('modalBg').classList.remove('open')">
-      ✕ Close
-    </button>
-
-    <h2>${m.strMeal}</h2>
-
-    <div class="meta">
-      ${m.strCategory || ''}
-      ${m.strArea ? '· ' + m.strArea : ''}
-    </div>
-
-    <div class="modal-actions">
-      <button onclick="toggleFavFromModal(
-        '${m.idMeal}',
-        '${m.strMeal.replace(/'/g,"\\'")}',
-        '${m.strMealThumb}',
-        this
-      )">
-        ${isFav ? '❤️ Saved' : '🤍 Save'}
-      </button>
-
-      <button onclick="shareRecipe(
-        '${m.idMeal}',
-        '${m.strMeal.replace(/'/g,"\\'")}'
-      )">
-        🔗 Share
-      </button>
-    </div>
-
-    <div class="day-select-row">
-      <label>📅 Add to planner:</label>
-
-      <select id="daySelect">
-        ${DAYS.map(d => `
-          <option value="${d}">${d}</option>
-        `).join('')}
-      </select>
-
-      <button onclick="addMealToDay(
-        document.getElementById('daySelect').value
-      )">
-        Add
-      </button>
-    </div>
-
-    <img class="meal-img"
-      src="${m.strMealThumb}"
-      alt="${m.strMeal}"/>
-
-    <h3>Ingredients</h3>
-
-    <ul>
-      ${ingredients.map(i => `<li>${i}</li>`).join('')}
-    </ul>
-
-    <h3>Instructions</h3>
-
-    <p>
-      ${
-        m.strInstructions
-          ? m.strInstructions.slice(0, 700) + '...'
-          : 'No instructions available.'
-      }
-    </p>
-  `;
-}
   function toggleFavFromModal(id, name, thumb, btn) {
     const exists = favourites.findIndex(f => f.idMeal === id);
     if (exists >= 0) {
-      favourites.splice(exists, 1);
-      btn.textContent = '🤍 Save';
+      favourites.splice(exists, 1); btn.textContent = '🤍 Save';
       showToast('Removed from favourites');
     } else {
-      favourites.push({ idMeal: id, strMeal: name, strMealThumb: thumb });
-      btn.textContent = '❤️ Saved';
+      favourites.push({ idMeal: id, strMeal: name, strMealThumb: thumb }); btn.textContent = '❤️ Saved';
       showToast('Added to favourites!');
     }
     localStorage.setItem('recipelab-favs', JSON.stringify(favourites));
@@ -553,6 +529,125 @@
     if (e.target.id === 'modalBg') { document.getElementById('modalBg').classList.remove('open'); currentMeal = null; }
   }
 
+  // ── CALORIE CALCULATOR ──
+  function openCalc() {
+    document.getElementById('calcBg').classList.add('open');
+  }
+
+  function closeCalcModal(e) {
+    if (e.target.id === 'calcBg') document.getElementById('calcBg').classList.remove('open');
+  }
+
+  async function searchCalcIngredient() {
+    const q = document.getElementById('calcQuery').value.trim();
+    if (!q) return;
+    const box = document.getElementById('calcResultBox');
+    box.classList.remove('visible');
+    document.getElementById('calcResultName').textContent = 'Searching...';
+    box.classList.add('visible');
+    try {
+      const res = await fetch(`https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(q)}&search_simple=1&action=process&json=1&page_size=1`);
+      const data = await res.json();
+      if (!data.products || data.products.length === 0) {
+        document.getElementById('calcResultName').textContent = 'No results found. Try a different term.';
+        document.getElementById('calcResultKcal').textContent = '';
+        currentCalcIngredient = null; return;
+      }
+      const p = data.products[0];
+      const kcalPer100 = p.nutriments['energy-kcal_100g'] || p.nutriments['energy-kcal'] || 0;
+      currentCalcIngredient = { name: q, kcalPer100: Math.round(kcalPer100) };
+document.getElementById('calcResultName').textContent = `${currentCalcIngredient.kcalPer100} kcal per 100g`;
+document.getElementById('calcResultKcal').textContent = '';
+      document.getElementById('calcGrams').value = 100;
+    } catch(e) {
+      document.getElementById('calcResultName').textContent = 'Error fetching data.';
+    }
+  }
+
+  function addCalcIngredient() {
+    if (!currentCalcIngredient) return;
+    const grams = parseFloat(document.getElementById('calcGrams').value) || 100;
+    const kcal = Math.round((currentCalcIngredient.kcalPer100 * grams) / 100);
+    calcIngredients.push({ name: currentCalcIngredient.name, grams, kcal, kcalPer100: currentCalcIngredient.kcalPer100 });
+    document.getElementById('calcQuery').value = '';
+    document.getElementById('calcResultBox').classList.remove('visible');
+    currentCalcIngredient = null;
+    renderCalcList();
+  }
+
+  function removeCalcIngredient(index) {
+    calcIngredients.splice(index, 1);
+    renderCalcList();
+  }
+
+  function renderCalcList() {
+    const el = document.getElementById('calcList');
+    if (calcIngredients.length === 0) {
+      el.innerHTML = '<div class="calc-empty">No ingredients added yet.</div>';
+      document.getElementById('calcTotal').textContent = '0 kcal';
+      return;
+    }
+    const total = calcIngredients.reduce((sum, i) => sum + i.kcal, 0);
+    el.innerHTML = calcIngredients.map((ing, i) => `
+      <div class="calc-item">
+        <span class="calc-item-name">${ing.name} <span style="color:var(--muted); font-size:0.78rem">(${ing.grams}g)</span></span>
+        <span class="calc-item-kcal">${ing.kcal} kcal</span>
+        <button class="calc-item-remove" onclick="removeCalcIngredient(${i})">×</button>
+      </div>`).join('');
+    document.getElementById('calcTotal').textContent = `${total} kcal`;
+  }
+
+  function saveCalculation() {
+    if (calcIngredients.length === 0) { showToast('Add at least one ingredient first!'); return; }
+    const name = document.getElementById('calcRecipeName').value.trim() || 'Unnamed Recipe';
+    const total = calcIngredients.reduce((sum, i) => sum + i.kcal, 0);
+    const date = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    savedCalcs.unshift({ name, total, date, ingredients: [...calcIngredients] });
+    localStorage.setItem('recipelab-calcs', JSON.stringify(savedCalcs));
+    // reset
+    calcIngredients = [];
+    currentCalcIngredient = null;
+    document.getElementById('calcRecipeName').value = '';
+    document.getElementById('calcQuery').value = '';
+    document.getElementById('calcResultBox').classList.remove('visible');
+    renderCalcList();
+    showToast(`"${name}" saved!`);
+  }
+
+  // ── NOTES / SAVED CALCS ──
+  function openNotes() {
+    renderNotesList();
+    document.getElementById('notesBg').classList.add('open');
+  }
+
+  function closeNotesModal(e) {
+    if (e.target.id === 'notesBg') document.getElementById('notesBg').classList.remove('open');
+  }
+
+  function renderNotesList() {
+    const el = document.getElementById('notesList');
+    if (savedCalcs.length === 0) {
+      el.innerHTML = '<div class="notes-empty">📋<br><br>No saved calculations yet.<br>Use the Calorie Calculator to create one!</div>'; return;
+    }
+    el.innerHTML = savedCalcs.map((c, i) => `
+      <div class="note-card">
+        <div class="note-card-header">
+          <span class="note-card-name">${c.name}</span>
+          <span class="note-card-total">${c.total} kcal</span>
+          <button class="note-card-remove" onclick="removeNote(${i})">×</button>
+        </div>
+        <div class="note-card-date">📅 ${c.date}</div>
+        <div class="note-ing-list">${c.ingredients.map(ing => `${ing.name} — ${ing.grams}g → ${ing.kcal} kcal`).join('<br>')}</div>
+      </div>`).join('');
+  }
+
+  function removeNote(index) {
+    savedCalcs.splice(index, 1);
+    localStorage.setItem('recipelab-calcs', JSON.stringify(savedCalcs));
+    renderNotesList();
+  }
+
+  // ── UTILS ──
   function showToast(msg) {
     const t = document.getElementById('toast');
     t.textContent = msg; t.classList.add('show');
@@ -560,6 +655,7 @@
   }
 
   document.getElementById('query').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+  document.getElementById('calcQuery').addEventListener('keydown', e => { if (e.key === 'Enter') searchCalcIngredient(); });
 </script>
 </body>
 </html>
